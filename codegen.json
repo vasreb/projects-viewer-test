@@ -2,7 +2,7 @@
   "schema": {
     "https://api.github.com/graphql": {
       "headers": {
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
         "User-Agent": "MyApp/1.0.0"
       }
     }
