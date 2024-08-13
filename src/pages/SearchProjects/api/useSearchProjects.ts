@@ -5,11 +5,11 @@ const useSearchProjects = ({ query }: { query: string }) => {
     variables: {
       query,
     },
+    notifyOnNetworkStatusChange: true,
   });
 
   const loadMore = () => {
     if (data?.search?.pageInfo.hasNextPage) {
-      console.log(data?.search?.pageInfo);
       fetchMore({
         variables: {
           query,
@@ -32,6 +32,8 @@ const useSearchProjects = ({ query }: { query: string }) => {
       });
     }
   };
+
+  console.log("loading", loading);
 
   return {
     data: data?.search?.edges as Array<{ node: Repository }>,

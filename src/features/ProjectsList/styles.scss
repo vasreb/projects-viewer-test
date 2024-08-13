@@ -1,0 +1,21 @@
+.ProjectsList {
+  flex-direction: column;
+  max-width: 500px;
+
+  &__Card {
+    margin-bottom: 20px;
+  }
+}
+
+.ProjectCard {
+  &__Owner {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 5px;
+  }
+
+  &__BottomText {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

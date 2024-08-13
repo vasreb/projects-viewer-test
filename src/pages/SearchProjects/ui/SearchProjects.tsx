@@ -1,23 +1,22 @@
 import { ProjectsList } from "@/features";
 import useSearchProjects from "../api/useSearchProjects";
-import { CircularProgress, Typography, Box } from "@mui/material";
+
+import "./styles.scss";
+import { Loader } from "@/shared";
 
 const SearchProjects = () => {
   const { data, loading, error, fetchMore } = useSearchProjects({
     query: "language:typescript sort:stars-desc",
   });
 
-  if (error)
-    return <Typography color="error">Error: {error.message}</Typography>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <Box sx={{ padding: 3 }}>
-      <Typography variant="h4" gutterBottom>
-        Search Results
-      </Typography>
+    <div className="SearchProjects">
+      <h2 className="SearchProjects__Title">Search Result</h2>
       <ProjectsList data={data} onFetchMore={fetchMore} />
-      {loading && <CircularProgress />}
-    </Box>
+      {loading && <Loader />}
+    </div>
   );
 };
 

@@ -1,16 +1,8 @@
 import { Repository } from "Generated";
-import {
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-  Avatar,
-  Link as MUILink,
-  Box,
-  ListItemAvatar,
-} from "@mui/material";
+
 import { Link } from "react-router-dom";
-import { usePageBottom } from "@/shared";
+import { Card, usePageBottom } from "@/shared";
+import "./styles.scss";
 
 interface Props {
   data: Array<{ node: Repository }>;
@@ -21,49 +13,32 @@ const ProjectsList = ({ data, onFetchMore }: Props) => {
   usePageBottom(onFetchMore);
 
   return (
-    <List>
+    <div className="ProjectsList">
       {data?.map((edge) => (
-        <ListItem key={edge?.node?.id} alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar
-              src={edge?.node?.owner?.avatarUrl}
-              alt={edge?.node?.owner?.login}
-            />
-          </ListItemAvatar>
-          <ListItemText
-            primary={
-              <Box>
-                <Link
-                  to={`/project?owner=${edge?.node?.owner?.login}&name=${edge?.node?.name}`}
-                >
-                  <MUILink> {edge?.node?.name}</MUILink>
-                </Link>
-                <Typography variant="body2" color="textSecondary">
-                  {`by ${edge?.node?.owner?.login}`}
-                </Typography>
-              </Box>
-            }
-            secondary={
-              <Box>
-                <Typography variant="body1" gutterBottom>
-                  {edge?.node?.description}
-                </Typography>
-                <Typography variant="caption" color="textSecondary">
-                  Stars: {edge?.node?.stargazerCount} | Forks:{" "}
-                  {edge?.node?.forkCount}
-                </Typography>{" "}
-                |{" "}
-                <Typography variant="caption" color="textSecondary">
-                  {`Languages: ${edge?.node?.languages?.edges?.map(
-                    (l) => ` ${l?.node.name}`
-                  )}`}
-                </Typography>
-              </Box>
-            }
-          />
-        </ListItem>
+        <Card className="ProjectsList__Card" key={edge?.node?.id}>
+          <Card.Header>
+            <Link
+              to={`/project?owner=${edge?.node?.owner?.login}&name=${edge?.node?.name}`}
+            >
+              {edge?.node?.name}
+            </Link>
+            <div className="ProjectCard__Owner">
+              by {edge?.node?.owner?.login}
+            </div>
+          </Card.Header>
+          <Card.Body>
+            <div>{edge?.node?.description}</div>
+          </Card.Body>
+          <Card.Bottom>
+            <div className="ProjectCard__BottomText">
+              Stars: {edge?.node?.stargazerCount} | Forks:{" "}
+              {edge?.node?.forkCount} | Languages:
+              {edge?.node?.languages?.edges?.map((l) => ` ${l?.node.name}`)}
+            </div>
+          </Card.Bottom>
+        </Card>
       ))}
-    </List>
+    </div>
   );
 };
 

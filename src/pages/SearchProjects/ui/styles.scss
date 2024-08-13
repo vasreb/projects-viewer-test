@@ -1,0 +1,10 @@
+.SearchProjects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__Title {
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../config/vars.scss";
+
+.Card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px 30px;
+  box-shadow: 2px 0px 7px 3px $shadow;
+}
+
+.CardHeader {
+}
+
+.CardBody {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.CardBottom {
+  color: $secondary;
+}

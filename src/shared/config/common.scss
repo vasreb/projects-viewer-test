@@ -1,0 +1,24 @@
+@import "./reset.css";
+@import "./vars.scss";
+
+a,
+p,
+span,
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 35px;
+  line-height: 45px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 25px;
+}

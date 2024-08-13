@@ -1,0 +1,63 @@
+.ProjectDetails {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+  &__Header {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__Back {
+    border: 0;
+    background: none;
+    padding: 0;
+
+    margin-right: 15px;
+  }
+
+  &__Owner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__OwnerName {
+    margin-left: 20px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &__Description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__Features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__Card {
+    margin-top: 20px;
+  }
+
+  &__LanguageItem {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 5px;
+  }
+
+  &__ContribItem {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+  }
+}
