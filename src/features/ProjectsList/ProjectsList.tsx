@@ -10,6 +10,7 @@ import {
   ListItemAvatar,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import { usePageBottom } from "@/shared";
 
 interface Props {
   data: Array<{ node: Repository }>;
@@ -17,6 +18,8 @@ interface Props {
 }
 
 const ProjectsList = ({ data, onFetchMore }: Props) => {
+  usePageBottom(onFetchMore);
+
   return (
     <List>
       {data?.map((edge) => (

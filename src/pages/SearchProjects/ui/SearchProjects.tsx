@@ -3,7 +3,7 @@ import useSearchProjects from "../api/useSearchProjects";
 import { CircularProgress, Typography, Box } from "@mui/material";
 
 const SearchProjects = () => {
-  const { data, loading, error } = useSearchProjects({
+  const { data, loading, error, fetchMore } = useSearchProjects({
     query: "language:typescript sort:stars-desc",
   });
 
@@ -15,7 +15,7 @@ const SearchProjects = () => {
       <Typography variant="h4" gutterBottom>
         Search Results
       </Typography>
-      <ProjectsList data={data} onFetchMore={() => console.log("fetch")} />
+      <ProjectsList data={data} onFetchMore={fetchMore} />
       {loading && <CircularProgress />}
     </Box>
   );

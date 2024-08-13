@@ -1,5 +1,9 @@
-query SearchProjects($query: String!) {
-  search(query: $query, type: REPOSITORY, first: 10) {
+query SearchProjects($query: String!, $after: String) {
+  search(query: $query, type: REPOSITORY, first: 10, after: $after) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
     edges {
       node {
         ... on Repository {
