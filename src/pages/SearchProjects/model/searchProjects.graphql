@@ -1,0 +1,28 @@
+query SearchProjects($query: String!) {
+  search(query: $query, type: REPOSITORY, first: 10) {
+    edges {
+      node {
+        ... on Repository {
+          id
+          name
+          url
+          stargazerCount
+          description
+          forkCount
+          owner {
+            login
+            url
+          }
+          languages(first: 10) {
+            edges {
+              node {
+                name
+              }
+              size
+            }
+          }
+        }
+      }
+    }
+  }
+}
