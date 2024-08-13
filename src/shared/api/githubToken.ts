@@ -1,3 +1,3 @@
-const token = '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';
+const token = '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';
 
 export default token;
