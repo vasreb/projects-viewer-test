@@ -1,7 +1,7 @@
 import {
   ProjectDetailsQuery,
   useProjectDetailsQuery,
-} from "@/shared/api/generated/graphql";
+} from "Generated";
 
 const useProjectDetails = (owner: string, name: string) => {
   const { data, loading, error } = useProjectDetailsQuery({

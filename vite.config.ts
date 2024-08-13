@@ -10,6 +10,10 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      Generated: path.resolve(
+        __dirname,
+        "./src/shared/api/generated/graphql.tsx"
+      ),
     },
   },
 });

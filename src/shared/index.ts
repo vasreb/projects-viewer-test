@@ -1,5 +1,5 @@
 import { default as ScrollToTop } from "./ui/ScrollToTop";
-import { default as InfinityList } from "./ui/InfinityList";
 import { default as useQueryParameters } from "./hooks/useQueryParameters";
+import { default as usePageBottom } from "./hooks/usePageBottom";
 
-export { ScrollToTop, InfinityList, useQueryParameters };
+export { ScrollToTop, usePageBottom, useQueryParameters };

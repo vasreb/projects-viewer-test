@@ -1,7 +1,7 @@
 import {
   Repository,
   useSearchProjectsQuery,
-} from "@/shared/api/generated/graphql";
+} from "Generated";
 
 const useSearchProjects = ({ query }: { query: string }) => {
   const { data, loading, error } = useSearchProjectsQuery({

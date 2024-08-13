@@ -20,7 +20,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "Generated": ["./src/shared/api/generated/graphql.tsx"]
     }
   },
   "include": ["src"]
