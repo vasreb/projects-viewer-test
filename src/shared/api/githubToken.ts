@@ -1,3 +1,3 @@
-const token = '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';
+const token = import.meta.env.VITE_GITHUB_API_TOKEN;
 
 export default token;
