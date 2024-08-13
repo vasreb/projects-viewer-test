@@ -6,7 +6,7 @@ export default {
   schema: {
     "https://api.github.com/graphql": {
       headers: {
-        Authorization: `Bearer ${process.env.VITE_GITHUB_API_TOKEN}`,
+        Authorization: `Bearer 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`,
         "User-Agent": "MyApp/1.0.0",
       },
     },
